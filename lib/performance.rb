@@ -13,8 +13,8 @@ class Perfomance
   end
 
   def perform
-    validator.new(file).file_exists
-    read_file = reader.new(file).file_read
+    valid_file = validator.new(file).file_exists
+    read_file = reader.new(valid_file).file_read
     collected_data = collector.new(read_file).collect_data
     group = grouping.new(collected_data).group_data
     counted_hash = counter.new(group).count_values
