@@ -6,7 +6,10 @@ class Validator
   end
 
   def file_exists
-    file_exists = File.exist?(file_path)
-    raise StandardError unless file_exists
+    if File.exist?(file_path)
+      file_path
+    else
+      raise StandardError
+    end
   end
 end
