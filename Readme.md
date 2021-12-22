@@ -24,3 +24,13 @@ In this folder you can see next files:
 In this folder you can see next file:
 
 1. gifthealth - a written script for calling a class, to which I will pass the necessary classes as parameters. ARGV - array of arguments that we pass when running the script on the command line.
+
+## Spec Folder
+
+### Lib Folder
+
+In this folder I wrote unit tests for my classes. You can run rspec and make sure everything is working correctly.
+
+### Fixtures Folder
+
+In this folder you can see my file (test.txt) with the data for testing.
