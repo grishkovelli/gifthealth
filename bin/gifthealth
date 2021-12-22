@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+
+require_relative '../lib/validator.rb'
+require_relative '../lib/reader.rb'
+require_relative '../lib/data_collector.rb'
+require_relative '../lib/data_grouping.rb'
+require_relative '../lib/counter.rb'
+require_relative '../lib/total_income.rb'
+require_relative '../lib/printer.rb'
+require_relative '../lib/performance.rb'
+
+unless ARGV.any?
+  warn 'Please, write folder name'
+  exit[1]
+end
+
+Perfomance.new(ARGV.first, Validator, Reader, DataCollector, DataGrouping, Counter, TotalIncome, Printer).perform
