@@ -9,7 +9,7 @@ class DataGrouping
     hash = Hash.new
 
     data.uniq { |key| key.first }.each do |key|
-      hash[key.first.split] = data.select { |array| array.include?(key.first) }.map { |array| array.last }
+      hash[key.first] = data.select { |array| array.include?(key.first) }.map { |array| array.last }
     end
 
     hash

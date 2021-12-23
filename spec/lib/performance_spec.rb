@@ -7,7 +7,7 @@ require_relative '../../lib/total_income.rb'
 require_relative '../../lib/printer.rb'
 require_relative '../../lib/performance.rb'
 
-describe Perfomance do
+describe Performance do
   describe '#perform' do
     subject { described_class.new(file, Validator, Reader, 
               DataCollector, DataGrouping, 

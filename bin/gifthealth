@@ -14,4 +14,4 @@ unless ARGV.any?
   exit[1]
 end
 
-Perfomance.new(ARGV.first, Validator, Reader, DataCollector, DataGrouping, Counter, TotalIncome, Printer).perform
+Performance.new(ARGV.first, Validator, Reader, DataCollector, DataGrouping, Counter, TotalIncome, Printer).perform

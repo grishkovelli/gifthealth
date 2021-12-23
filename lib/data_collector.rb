@@ -6,6 +6,6 @@ class DataCollector
   end
 
   def collect_data
-    data.map { |line| line.strip.split }.map { |array| [array.first + " #{array[1]}", array.last] }
+    data.map { |line| line.strip.split }.map { |array| [[array.first, array[1]], array.last] }
   end
 end

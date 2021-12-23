@@ -1,4 +1,4 @@
-class Perfomance
+class Performance
   attr_reader :file, :validator, :reader, :collector, :grouping, :counter, :income, :printer
 
   def initialize(file, validator, reader, collector, grouping, counter, income, printer)
