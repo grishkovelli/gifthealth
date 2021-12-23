@@ -30,7 +30,7 @@ $ rspec
 ### Running the script:
 
 ```
-bin/gifthealth public/pharmacy_system.txt
+$ bin/gifthealth public/pharmacy_system.txt
 ```
 
 
