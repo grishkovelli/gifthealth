@@ -13,10 +13,10 @@ describe DataCollector do
 
       it 'return an array of data' do
         expect(subject).to match_array(
-          [["Mark B", "created"], 
-           ["Mark B", "filled"], 
-           ["Mark B", "filled"], 
-           ["Nick A", "created"]]
+          [[["Mark", "B"], "created"], 
+           [["Mark", "B"], "filled"], 
+           [["Mark", "B"], "filled"], 
+           [["Nick", "A"], "created"]]
         )
       end
     end
