@@ -6,6 +6,12 @@ class DataCollector
   end
 
   def collect_data
-    data.map { |line| line.strip.split }.map { |array| [[array.first, array[1]], array.last] }
+    collecting(data)
+  end
+
+  private
+
+  def collecting(array_of_data)
+    array_of_data.map { |line| line.strip.split }.map { |array| [[array.first, array[1]], array.last] }
   end
 end
