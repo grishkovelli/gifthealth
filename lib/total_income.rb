@@ -13,12 +13,24 @@ class TotalIncome
 
   def counting_for_each_client(hash)
     patient = Hash.new
-    value = hash.to_a.map { |h| [h.first.first, h.last] }
+    value = hash_to_array(hash)
 
-    value.uniq { |el| el.first }.each do |el|
-      patient[el.first] = value.select { |arr| arr.include?(el.first) }.map { |arr| arr.last }.transpose.map { |arr| arr.sum }
+    value.uniq { |el| first_element(el) }.each do |el|
+      patient[first_element(el)] = value_setter(value, el)
     end
 
     patient
+  end
+
+  def hash_to_array(hash)
+    hash.to_a.map { |h| [first_element(h).first, h.last] }
+  end
+
+  def first_element(el)
+    el.first
+  end
+
+  def value_setter(value, el)
+    value.select { |arr| arr.include?(first_element(el)) }.map { |arr| arr.last }.transpose.map { |arr| arr.sum }
   end
 end

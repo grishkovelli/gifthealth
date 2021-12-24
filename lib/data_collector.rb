@@ -12,6 +12,14 @@ class DataCollector
   private
 
   def collecting(array_of_data)
-    array_of_data.map { |line| line.strip.split }.map { |array| [[array.first, array[1]], array.last] }
+    array_of_data.map { |line| array_setter(string_separator(line)) }
+  end
+
+  def string_separator(line)
+    line.strip.split
+  end
+
+  def array_setter(array)
+    [[array.first, array[1]], array.last]
   end
 end
