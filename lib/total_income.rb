@@ -1,11 +1,17 @@
 class TotalIncome
-  attr_reader :hash
+  attr_reader :hash_of_data
 
-  def initialize(hash)
-    @hash = hash
+  def initialize(hash_of_data)
+    @hash_of_data = hash_of_data
   end
 
   def total_income
+    counting_for_each_client(hash_of_data)
+  end
+
+  private
+
+  def counting_for_each_client(hash)
     patient = Hash.new
     value = hash.to_a.map { |h| [h.first.first, h.last] }
 

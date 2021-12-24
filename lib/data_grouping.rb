@@ -6,9 +6,15 @@ class DataGrouping
   end
 
   def group_data
+    grouping(data)
+  end
+
+  private
+
+  def grouping(array_of_data)
     hash = Hash.new
 
-    data.uniq { |key| key.first }.each do |key|
+    array_of_data.uniq { |key| key.first }.each do |key|
       hash[key.first] = data.select { |array| array.include?(key.first) }.map { |array| array.last }
     end
 

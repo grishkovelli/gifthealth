@@ -1,11 +1,17 @@
 class Counter
-  attr_reader :hash
+  attr_reader :hash_of_data
 
-  def initialize(hash)
-    @hash = hash
+  def initialize(hash_of_data)
+    @hash_of_data = hash_of_data
   end
 
   def count_values
+    counting(hash_of_data)
+  end
+
+  private
+
+  def counting(hash)
     hash.each do |key, value|
       if value.include?("created") == false
         hash[key] = [0, 0] 

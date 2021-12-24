@@ -6,8 +6,14 @@ class Validator
   end
 
   def file_exists
-    if File.exist?(file_path)
-      file_path
+    validation(file_path)
+  end
+
+  private
+
+  def validation(file)
+    if File.exist?(file)
+      file
     else
       raise StandardError
     end
